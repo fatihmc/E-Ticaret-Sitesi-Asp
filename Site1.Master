@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="itpwebsite.Site1" %>
+
+<!DOCTYPE html>
+
+
+
+ <style type="text/css">
+      
+        #yanmenu
+        {
+            margin-top:100px;
+        }
+        #sepet{
+            margin-left:1250px;
+            
+            
+        }
+        #solresim{
+            margin-right:20px;
+        }
+
+ </style>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/umd/popper-utils.min.js"></script>
+    <script src="Scripts/esm/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <title></title>
+    </head>
+<!--Header---------------------------------------------------------->
+    <div class="header">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/AnaSayfa.aspx">
+      <img src="images/logo.png" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<div class="row">
+              <div class="col-mr-10">
+                 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/AnaSayfa.aspx"><i class="fa fa-home"></i>Ana Sayfa </a>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <i class="fa fa-shopping-cart"></i>Ürünler
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="kuruyemis.aspx">Kuru Yemiş</a>
+          <a class="dropdown-item" href="baharat.aspx">Baharat</a>
+             <a class="dropdown-item" href="kurumeyve.aspx">Kuru Meyve</a> 
+            <a class="dropdown-item" href="lokum.aspx">Lokum Çeşitleri</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="yoresel.aspx">Yöresel</a>
+        </div>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/Contact.aspx"> <i class="fa fa-file-signature"></i>İletişim</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/register.aspx"><i class="fa fa-user-plus"></i>Kayıt Ol</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/Login.aspx"><i class="fa fa-users"></i>Giriş Yap</a>
+      </li>
+    
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="AnaSayfa.aspx" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-user"></i>Profil
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="urunkaydet.aspx">Ürün Kaydet</a>
+          <a class="dropdown-item" href="#">Mesajlar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="cikisyap.aspx">Çıkış Yap</a>
+        </div>
+      </li>
+       
+
+    </ul>
+    
+  </div>
+
+
+    </div>
+<div class="col-mr-2">
+   <div  id="sepet" >
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+        <a class="nav-link" href="Sepetim.aspx"><i class="fa fa-shopping-basket"></i>Sepetim</a>
+              
+      </li>
+            <li>  <input id="Hidden1" type="hidden" /></li>
+       </ul>
+     
+    </div>
+</div>  
+</div>
+</nav>
+
+<div class="row">
+           <div class="col-md-3" id="yanmenu">
+              <div class="row">
+
+  <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+  
+    <a href="kuruyemis.aspx"<button type="button" class="btn btn-primary">Kuru Yemişler</button></a>
+   <a href="kurumeyve.aspx"<button type="button" class="btn btn-light">Kuru Meyveler</button></a>
+   <a href="lokum.aspx"<button type="button" class="btn btn-primary">Lokumlar</button></a>
+   <a href="baharat.aspx"<button type="button" class="btn btn-light">Baharatlar</button></a>
+    <a href="yoresel.aspx"<button type="button" class="btn btn-primary">Yöresel Ürünler</button></a>
+
+  </div>
+                  <div>
+                     
+                  </div>
+   
+  </div>
+  
+           </div>
+
+   
+     <div class="col-md-9">
+    
+    <asp:ContentPlaceHolder ID="icerik" runat="server">
+      
+    </asp:ContentPlaceHolder>
+  <!--Footer---------------------------------------------------------->
+         </div>
+<div class="footer">
+
+    <footer class="bg-light text-center text-lg-start">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Firmamız Hizmetinizdedir...</h5>
+
+        <ul class="list-unstyled mb-0">
+
+        <li> <a href="AnaSayfa.aspx"> <img src="images/logo.png" /></a></li> 
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-0">Sizler İçin Üretiyoruz...</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="Contact.aspx" class="text-dark">Bize Ulaşın</a>
+          </li>
+        
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Ürünlerimiz</h5>
+
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="kuruyemis.aspx" class="text-dark">Kuru Yemiş</a>
+          </li>
+          <li>
+            <a href="kurumeyve.aspx" class="text-dark">Kuru Meyve</a>
+          </li>
+          <li>
+            <a href="lokum.aspx" class="text-dark">Lokumlar</a>
+          </li>
+          <li>
+            <a href="yoresel.aspx" class="text-dark">Yöresel</a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-0">444 0 444</h5>
+
+        <ul class="list-unstyled">
+        <li>İrtibat için Arayın...</li>
+        </ul>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2021 Copyright:
+    <a class="text-dark" href="/">FMC Design</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+</div>
+
+
+  
+
+

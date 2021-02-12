@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Windows.Forms;
+
+namespace itpwebsite
+{
+    public partial class baharat : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            
+            //string sorgu = "SELECT * FROM urunler WHERE Name LIKE '%@filter% ORDER BY Price";
+            //string sorgu = "SELECT * FROM Products WHERE Name LIKE %@filter%";
+            string sorgu = "SELECT TOP 6 * FROM Products WHERE CategoryId=1";
+
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-J7ENL5T\SQLEXPRESS;Initial Catalog=AndEticaretDB;Integrated Security=True");
+
+            SqlCommand komut = new SqlCommand(sorgu, con);
+
+            con.Open();
+
+            SqlDataAdapter adaptor1 = new SqlDataAdapter(komut);
+            DataTable dt = new DataTable();
+
+            adaptor1.Fill(dt);
+
+            ListViewBaharat.DataSource = dt;
+            ListViewBaharat.DataBind();
+            //MessageBox.Show("Kayıt Başarı ile Eklendi");
+            con.Close();
+        }
+        protected void btnSepeteEkle_Click(object sender, CommandEventArgs e)
+
+        {
+            // SEPETE EKLE------------------------------------------------------
+
+            if (Session["Email"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
+            else
+            {
+                string kullaniciAdi = Session["Email"].ToString();
+
+                int urunID = Convert.ToInt32(e.CommandArgument.ToString());
+
+
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-J7ENL5T\SQLEXPRESS;Initial Catalog=AndEticaretDB;Integrated Security=True");
+
+                string sorgu = "INSERT INTO Baskets (kullaniciAdi, urunID) VALUES (@kullaniciAdi, @urunID)";
+
+                SqlCommand komut = new SqlCommand(sorgu, con);
+
+                con.Open();
+                komut.Parameters.AddWithValue("@kullaniciAdi", kullaniciAdi);
+                komut.Parameters.AddWithValue("@urunID", urunID);
+
+
+                komut.ExecuteNonQuery();
+                MessageBox.Show("Sepete eklendi");
+                con.Close();
+
+            }
+
+
+        }
+        protected void ListViewBaharat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
